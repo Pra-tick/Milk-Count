@@ -6,125 +6,136 @@
     <title>Milk Inventory</title>
     <style>
         table {
-            width: 80%;
-            border-collapse: collapse;
+            width: 60%;
             margin: 20px auto;
+            border-collapse: collapse;
         }
         th, td {
+            border: 1px solid #000;
             padding: 10px;
-            border: 1px solid #ddd;
             text-align: left;
         }
         th {
             background-color: #f2f2f2;
         }
-        .milk-image {
-            width: 50px;
-            height: auto;
-            vertical-align: middle;
-            margin-right: 10px;
-        }
-        td[contenteditable="true"] {
-            background-color: #f9f9f9;
+        #totalCount {
+            margin: 20px auto;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-
-    <h2 style="text-align: center;">Milk Inventory</h2>
-
+    <h1 style="text-align: center;">Milk Inventory</h1>
     <table id="milkTable">
         <tr>
             <th>Milk Name</th>
             <th>No. of Bags</th>
         </tr>
         <tr>
-            <td><img src="https://ik.imagekit.io/dunzo/1f1f72024d8811ed86127db1b4c37d9f_VARIANT_5d76270f4bf1844dbc4ecc60_1.jpg?tr=w-488,h-488,cm-pad_resize" alt="Chitale Cow" class="milk-image"> Chitale Cow</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
+            <td>Chitale Cow</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
         <tr>
-            <td><img src="https://ik.imagekit.io/dunzo/1653554533025_variant_5d42a89447ddec28ec84b270_1.jpg?tr=w-488,h-488,cm-pad_resize" alt="Chitale Buffalo" class="milk-image"> Chitale Buffalo</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
+            <td>Chitale Buffalo</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
         <tr>
-            <td><img src="https://cdn.zeptonow.com/production/inventory/product/51d55eac-ca29-4532-9b32-9b7d317f346a-1eGKwLejipCHdXkPs_ib-xiRbtH3RaTKT.jpeg" alt="Amul Gold" class="milk-image"> Amul Gold</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
+            <td>Amul Gold</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
         <tr>
-            <td><img src="https://fattaak.in/cdn/shop/files/19512a.webp?v=1688024446" alt="Amul Taaza" class="milk-image"> Amul Taaza</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
+            <td>Amul Taaza</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
         <tr>
-            <td><img src="https://sarhaddairy.coop/wp-content/uploads/2020/04/amul-buffalo-milk.jpg" alt="Amul Buffalo" class="milk-image"> Amul Buffalo</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
+            <td>Amul Cow</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
         <tr>
-            <td><img src="https://www.jiomart.com/images/product/600x600/490254092/amul-masti-dahi-400-g-pouch-product-images-o490254092-p590032902-0-202203151650.jpg" alt="Amul Masti (400gm)" class="milk-image"> Amul Masti (400gm)</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
+            <td>Amul Buffalo</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
         <tr>
-            <td><img src="https://5.imimg.com/data5/LO/WL/MY-20795906/amul-masti-1000x1000.jpg" alt="Amul Masti (1kg)" class="milk-image"> Amul Masti (1kg)</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
+            <td>Amul Masti (400gm)</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
         <tr>
-            <td><img src="https://www.bigbasket.com/media/uploads/p/l/40314834_1-amul-premium-dahi.jpg?tr=w-1080" alt="Amul Premium Dahi" class="milk-image"> Amul Premium Dahi</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
+            <td>Amul Masti (1kg)</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
         <tr>
-            <td><img src="https://m.media-amazon.com/images/I/81D1DATaOdL._SL1500_.jpg" alt="Amul Buttermilk" class="milk-image"> Amul Buttermilk</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
+            <td>Amul Premium Dahi</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
         <tr>
-            <td><img src="https://bookmysabzi.com/image/cache/catalog/gokul%20buffalo%20milk-800x800.png" alt="Gokul Buffalo" class="milk-image"> Gokul Buffalo</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
+            <td>Amul Buttermilk</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
         <tr>
-            <td><img src="https://www.bigbasket.com/media/uploads/p/xl/40141617_2-gokul-cow-milk.jpg" alt="Gokul Cow" class="milk-image"> Gokul Cow</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
+            <td>Gokul Buffalo</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
         <tr>
-            <td><img src="https://www.bigbasket.com/media/uploads/p/xl/40141619_1-katraj-milk.jpg" alt="Katraj" class="milk-image"> Katraj</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
+            <td>Gokul Cow</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
         <tr>
-            <td><img src="https://humpyfarms.com/cdn/shop/files/cow_milk_pune-02_1_1.jpg?v=1718276884" alt="Humpy" class="milk-image"> Humpy</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
+            <td>Katraj</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
         <tr>
-            <td><img src="https://www.bigbasket.com/media/uploads/p/l/40273686_2-manchar-farms-a2-desi-cow-milk-rich-in-protein-thick-creamy.jpg" alt="Manchar" class="milk-image"> Manchar</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
+            <td>Humpy</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
         <tr>
-            <td><img src="https://5.imimg.com/data5/SELLER/Default/2021/3/YA/BS/DM/9539022/a2-gir-cow-milk-1000x1000.jpg" alt="Gir A2" class="milk-image"> Gir A2</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
+            <td>Manchar</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
         <tr>
-            <td><img src="https://img77.uenicdn.com/image/upload/v1604427733/business/ba6f0c7e-8779-42e2-a515-0271141a8e93.jpg" alt="Bottle" class="milk-image"> Bottle</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
+            <td>Gir A2</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
         <tr>
-            <td><img src="https://farmtomom.com/wp-content/uploads/2021/08/1-1.png" alt="FarmMom" class="milk-image"> FarmMom</td>
-            <td contenteditable="true" oninput="updateTotal()">0</td>
-        </tr>
-        <tr>
-            <td><strong>Total Count</strong></td>
-            <td id="totalCount">0</td>
+            <td>FarmMom</td>
+            <td><input type="number" class="quantity" value="0" /></td>
         </tr>
     </table>
-
-    <p style="text-align: center;">Click on any cell in the "No. of Bags" column to edit the values as needed.</p>
+    <div id="totalCount">Total Count: <span id="total">0</span></div>
 
     <script>
+        const quantityInputs = document.querySelectorAll('.quantity');
+        const totalCountDisplay = document.getElementById('total');
+
+        // Load saved data from Local Storage
+        window.onload = function() {
+            const savedQuantities = JSON.parse(localStorage.getItem('milkQuantities')) || [];
+            quantityInputs.forEach((input, index) => {
+                input.value = savedQuantities[index] || 0;
+                input.addEventListener('input', updateTotal);
+            });
+            updateTotal(); // Update total on load
+        };
+
+        // Save data to Local Storage
+        function saveData() {
+            const quantities = Array.from(quantityInputs).map(input => parseInt(input.value) || 0);
+            localStorage.setItem('milkQuantities', JSON.stringify(quantities));
+        }
+
+        // Update total count
         function updateTotal() {
             let total = 0;
-            const rows = document.querySelectorAll('#milkTable tr');
-            for (let i = 1; i < rows.length - 1; i++) { // Start from 1 to skip header and end total row
-                const value = parseInt(rows[i].cells[1].innerText) || 0; // Get the value or default to 0
-                total += value;
-            }
-            document.getElementById('totalCount').innerText = total; // Update the total count
+            quantityInputs.forEach(input => {
+                total += parseInt(input.value) || 0;
+            });
+            totalCountDisplay.innerText = total;
+            saveData(); // Save data whenever total updates
         }
-    </script>
 
+        // Attach event listener to each input
+        quantityInputs.forEach(input => {
+            input.addEventListener('input', updateTotal);
+        });
+    </script>
 </body>
 </html>
